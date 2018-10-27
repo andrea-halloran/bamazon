@@ -6,7 +6,7 @@
 
     The user can select an item to purchase by selecting the item_id. After making a selection, the user will be prompted to select how many of the item they would like to purchase. 
 
-    If the quantity is less than what is available in the database, the app will print: "We are proceding with your purchase." This in turn, will update the database by subtracting the quantity selected from the quantity in the database. The app will also respond with the order confirmation and price for the total order.
+    If the quantity is less than what is available in the database, the app will print: "** scanning shopping cart**" This in turn, will update the database by subtracting the quantity selected from the quantity in the database. The app will also respond with the order confirmation and price for the total order.
 
     If the quantity is more than what is available in the database, the user will be told: "I'm sorry, we do not have enough product in stock."
 
