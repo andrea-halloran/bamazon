@@ -68,7 +68,7 @@ function start() {
                         let dbQuantity = connection.query('SELECT stock_quantity FROM products WHERE item_id = ' + product);
 
                         if (dbQuantity > quantity) {
-                            console.log("We are proceding with your purchase.")
+                            console.log("*** scanning shopping cart ***")
                             var subtract = 'UPDATE products SET stock_quantity = ' + (dbQuantity - quantity) + 'WHERE item_id = ' + product;
                             connection.query(subtract, function (err) {
                                 if (err) throw err;
