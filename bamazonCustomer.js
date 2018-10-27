@@ -50,14 +50,27 @@ function start() {
                         type: "confirm",
                         message: "Confirm purchase?"
                     }])
-                    .then(function (update) {
+                    .then(function (subtract) {
+                        // Need to figure out how to connect/disconnect from the database. 
+                        
+                        // let price = 'SELECT price FROM products WHERE item_id = ?'
+                        // connection.query(price, {item_id: product}, function (err){
+                        // if (err) throw err; 
+                        // })
+
                         let price = connection.query('SELECT price FROM products WHERE item_id =' + product);
+                        
+                        // let dbQuantity= 'SELECT stock_quantity FROM products WHERE item_id = ?'
+                        // connection.query(dbQuantity, {item_id: quantity}, function (err){
+                        // if (err) throw err; 
+                        // })
+
                         let dbQuantity = connection.query('SELECT stock_quantity FROM products WHERE item_id = ' + product);
 
                         if (dbQuantity > quantity) {
                             console.log("We are proceding with your purchase.")
-                            var update = 'UPDATE products SET stock_quantity = ' + (dbQuantity - quantity) + 'WHERE item_id = ' + product;
-                            connection.query(update, function (err) {
+                            var subtract = 'UPDATE products SET stock_quantity = ' + (dbQuantity - quantity) + 'WHERE item_id = ' + product;
+                            connection.query(subtract, function (err) {
                                 if (err) throw err;
                                 console.log('Your order has been placed. Your total is $' + price * quantity);
                             })
