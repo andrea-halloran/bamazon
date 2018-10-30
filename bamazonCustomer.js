@@ -42,9 +42,9 @@ function start() {
             .then(function (input) {
 
                 let product = parseInt(input.product);
-                console.log(product);
+                // console.log(product);
                 let quantity = parseInt(input.quantity);
-                console.log(quantity);
+                // console.log(quantity);
 
 
                 // console.log("You have selected to buy item_id: " + product + "." + '\n Please confirm that you want to purchase ' + quantity + ".");
@@ -57,7 +57,7 @@ function start() {
                 // Need to figure out how to connect/disconnect from the database. 
 
                 let price = 'SELECT * FROM products WHERE item_id = ?'
-                console.log(price);
+                // console.log(price);
 
                 connection.query(price, [product], function (err, res) {
                     console.log(res[0])
@@ -68,7 +68,8 @@ function start() {
                         connection.query(subtract, [(res[0].stock_quantity - quantity), product], function (err) {
                             if (err) throw err;
                             console.log('Your order has been placed. Your total is $' + res[0].price * quantity);
-                            console.log(res[0].stock_quantity);
+                            console.log("*** Remaining Stock ***")
+                            console.log(res[0].stock_quantity - quantity);
                         })
                     } else {
                         console.log("I'm sorry, we do not have enough product in stock.");
