@@ -1,4 +1,5 @@
 1.	Introduction
+
 Bamazon is an Amazon like storefront CLI app.
 
 Upon opening, the app will display all of the items that are for sale from the store.
