@@ -14,7 +14,7 @@ The remaining stock will be updated in the SQL database.
 
 If the quantity requested to buy is more than what is available in the database, the user will be told: "I'm sorry, we do not have enough product in stock."
 
-![alt text](3 - not enough in stock.png)
+![alt text](3.png)
 
 
 2.	Technology Used
