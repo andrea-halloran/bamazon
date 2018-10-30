@@ -18,8 +18,8 @@ If the quantity requested to buy is more than what is available in the database,
 
 
 2.	Technology Used
-o	MySQL and Inquirer npm packages
-o	MySQL
-o	JavaScript
-o	node.js
+* MySQL and Inquirer npm packages
+*	MySQL
+*	JavaScript
+*	node.js
 
